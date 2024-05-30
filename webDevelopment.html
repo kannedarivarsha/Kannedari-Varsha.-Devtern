@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Authentication <br> A Web Development task by devtern</title>
+    <!-- Include Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Background color gradient */
+            background: linear-gradient(to bottom right, #4ab3f4, #83d0f7);
+            overflow: hidden;
+        }
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.9); /* Background color with opacity */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .bg-shape {
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            width: 200px;
+            height: 200px;
+            /* Background color gradient for shape */
+            background: radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.8) 100%);
+            border-radius: 50%;
+            animation: float 8s infinite ease-in-out alternate;
+        }
+        @keyframes float {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(20px, 20px);
+            }
+        }
+        .icon {
+            font-size: 48px;
+            color: #fff; /* Color of the icons */
+            margin: 10px; /* Margin around the icons */
+        }
+        .form-group {
+            margin-bottom: 20px; /* Margin bottom between form elements */
+        }
+        .forgot-password {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #333; /* Color of the forgot password link */
+        }
+        .forgot-password:hover {
+            color: #666; /* Color of the forgot password link on hover */
+            text-decoration: underline;
+        }
+        /* Add space between label and input box */
+        label {
+            margin-bottom: 5px; /* Adjust as needed */
+        }
+        /* Add space between input boxes */
+        input {
+            margin-bottom: 10px; /* Adjust as needed */
+        }
+        .data-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-shape"></div>
+    <div class="login-container">
+        <!-- Using Unicode character for a girl working on a computer emoji -->
+        <span class="icon" style="font-size: 60px;">👩‍💻</span>
+        <h2 style="margin-bottom: 10px;">LOGIN AUTHENTICATION <br> A Web Development task by Devtern</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" name="username" placeholder="Kannedari Varsha" required><br>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password" placeholder="Web Development Project" required><br>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <a href="#" class="forgot-password">Forgot Password?</a>
+        
+        <!-- Data container to display data after login -->
+        <div class="data-container" id="dataContainer" style="display: none;">
+            <h3>Welcome to Devtern Project!</h3>
+            <p>Here is some data for you:</p>
+            <ul>
+                <li>Data item 1</li>
+                <li>Data item 2</li>
+                <li>Data item 3</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Get the login form and data container
+        const loginForm = document.getElementById('loginForm');
+        const dataContainer = document.getElementById('dataContainer');
+
+        // Add submit event listener to the form
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Perform your login authentication here
+            // Example: Check username and password against database
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Example of hardcoded authentication (replace with your backend logic)
+            if (username === 'login-xyz@gmail.com' && password === '12345*') {
+                // Show the data container
+                dataContainer.style.display = 'block';
+            } else {
+                // Show error message or handle authentication failure
+                alert('Invalid username or password. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>
